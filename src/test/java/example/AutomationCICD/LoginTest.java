@@ -61,6 +61,23 @@ void invalidLoginTest() {
 
         assertEquals("Epic sadface: Username is required", errorMsg);
     }
+    
+    @Test
+    void addToCart() {
+
+        testValidLogin();
+        
+        // Add first product to cart
+        driver.findElement(By.id("add-to-cart-sauce-labs-backpack"))
+                .click();
+
+        // Verify cart badge shows 1
+        WebElement cartBadge =
+                driver.findElement(By.className("shopping_cart_badge"));
+
+        assertEquals("1", cartBadge.getText());
+    }
+
 
     @AfterEach
     void tearDown() {
