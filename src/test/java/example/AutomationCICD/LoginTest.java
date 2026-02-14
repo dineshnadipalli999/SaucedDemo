@@ -79,7 +79,12 @@ void invalidLoginTest() {
     }
 
 
-    @AfterEach
+    private void testValidLogin() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@AfterEach
     void tearDown() {
         driver.quit();
     }
