@@ -1,4 +1,5 @@
 package example.AutomationCICD;
+import java.time.Duration;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.jupiter.api.*;
@@ -24,6 +25,8 @@ public class LoginTest {
         driver = new ChromeDriver(options);
         driver.manage().window().maximize();
         driver.get("https://www.saucedemo.com/");
+        
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
     }
 
     @Test
